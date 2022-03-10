@@ -19,11 +19,11 @@ QUnit.module('05 split join slice splice');
 /* ------------------------------------------------------------------------------------------------
 TESTS
 All the code below will verify that your functions are working to solve the challenges.
-DO NOT CHANGE any of the below code EXCEPT to change from "skip", to "test".
-Run your tests from the browser using live-server, or console via: npm test
+DO NOT CHANGE any of the below code EXCEPT to change from "skip", to "skip".
+Run your tests from the browser using live-server, or console via: npm skip
 ------------------------------------------------------------------------------------------------ */
 
-test('It should return a list of shortening words', (assert) => {
+skip('It should return a list of shortening words', (assert) => {
   assert.deepEqual(howMuchPencil('Welcome'), [
     'Welcome',
     'elcome',
@@ -38,7 +38,7 @@ test('It should return a list of shortening words', (assert) => {
   assert.deepEqual(howMuchPencil('abc'), ['abc', 'bc', 'c', '']);
 });
 
-test('It should return an array of individual letters', (assert) => {
+skip('It should return an array of individual letters', (assert) => {
   assert.deepEqual(wordsToCharList('Gregor'), ['G', 'r', 'e', 'g', 'o', 'r']);
   assert.deepEqual(wordsToCharList('hooray'), ['h', 'o', 'o', 'r', 'a', 'y']);
   assert.deepEqual(wordsToCharList(''), []);
@@ -72,7 +72,7 @@ const gruffaloCrumble = {
   ],
 };
 
-test('It should return a list of foods', (assert) => {
+skip('It should return a list of foods', (assert) => {
   assert.deepEqual(listFoods(gruffaloCrumble), [
     'Gruffalo',
     'oats',
@@ -88,7 +88,7 @@ test('It should return a list of foods', (assert) => {
   ]);
 });
 
-test('It should return a list of foods', (assert) => {
+skip('It should return a list of foods', (assert) => {
   assert.deepEqual(splitFoods(gruffaloCrumble), [
     'Gruffalo',
     'oats',
@@ -104,7 +104,7 @@ test('It should return a list of foods', (assert) => {
   ]);
 });
 
-test('It should return a list of recipe steps', (assert) => {
+skip('It should return a list of recipe steps', (assert) => {
   assert.deepEqual(stepActions(gruffaloCrumble), [
     'Pre-heat',
     'De-prickle',
@@ -118,7 +118,7 @@ test('It should return a list of recipe steps', (assert) => {
   ]);
 });
 
-test('It should remove the even numbers from the array', (assert) => {
+skip('It should remove the even numbers from the array', (assert) => {
   let list = [1, 2, 3, 4, 5, 6];
   removeEvenValues(list);
   assert.deepEqual(list, [1, 3, 5]);
@@ -128,33 +128,33 @@ test('It should remove the even numbers from the array', (assert) => {
   assert.deepEqual(list, [3, 19, 43, 43]);
 });
 
-test('It should shorten the string based on the first argument', (assert) => {
+skip('It should shorten the string based on the first argument', (assert) => {
   assert.equal(removeLastCharacters('Gregor', 2), 'Greg');
 });
 
-test('It should return the complete string when passed a negative number', (assert) => {
+skip('It should return the complete string when passed a negative number', (assert) => {
   assert.equal(removeLastCharacters('hello', -1), 'hello');
   assert.equal(removeLastCharacters('wowow', -700), 'wowow');
 });
 
-test('It should return an empty string when called with a number larger than the string length', (assert) => {
+skip('It should return an empty string when called with a number larger than the string length', (assert) => {
   assert.equal(removeLastCharacters('hello', 12), '');
   assert.equal(removeLastCharacters('', 1), '');
   assert.equal(removeLastCharacters('a', 1), '');
 });
 
-test('It should add up the numbers contained within the string', (assert) => {
+skip('It should add up the numbers contained within the string', (assert) => {
   assert.equal(totalSumCSV('1,4,5,7,2'), 19);
   assert.equal(totalSumCSV('147'), 147);
 });
 
-test('It should return the string without vowels', (assert) => {
+skip('It should return the string without vowels', (assert) => {
   assert.equal(removeVowels('gregor'), 'grgr');
   assert.equal(removeVowels('asdf'), 'sdf');
   assert.equal(removeVowels('why'), 'why');
 });
 
-test('It should return the string without vowels', (assert) => {
+skip('It should return the string without vowels', (assert) => {
   assert.deepEqual(extractVowels('gregor'), ['grgr', 'eo']);
   assert.deepEqual(extractVowels('The quick brown fox'), [
     'Th qck brwn fx',

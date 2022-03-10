@@ -14,11 +14,11 @@ QUnit.module('14 Review');
 /* ------------------------------------------------------------------------------------------------
 TESTS
 All the code below will verify that your functions are working to solve the challenges.
-DO NOT CHANGE any of the below code EXCEPT to change from "skip", to "test".
-Run your tests from the browser using live-server, or console via: npm test
+DO NOT CHANGE any of the below code EXCEPT to change from "skip", to "skip".
+Run your tests from the browser using live-server, or console via: npm skip
 ------------------------------------------------------------------------------------------------ */
 
-test('It should convert each word to title case', (assert) => {
+skip('It should convert each word to title case', (assert) => {
   const words = ['apple', 'banana', 'MacGyver'];
   assert.deepEqual(toTitleCase(words), ['Apple', 'Banana', 'MacGyver']);
   assert.deepEqual(toTitleCase([]), []);

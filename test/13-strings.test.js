@@ -19,11 +19,11 @@ QUnit.module('13 String Manipulation');
 /* ------------------------------------------------------------------------------------------------
 TESTS
 All the code below will verify that your functions are working to solve the challenges.
-DO NOT CHANGE any of the below code EXCEPT to change from "skip", to "test".
-Run your tests from the browser using live-server, or console via: npm test
+DO NOT CHANGE any of the below code EXCEPT to change from "skip", to "skip".
+Run your tests from the browser using live-server, or console via: npm skip
 ------------------------------------------------------------------------------------------------ */
 
-test('It should return the first letter of each element of the array', (assert) => {
+skip('It should return the first letter of each element of the array', (assert) => {
   const words = ['apple', 'banana', 'cantaloupe'];
 
   assert.deepEqual(firstLetters(words), ['a', 'b', 'c']);
@@ -31,7 +31,7 @@ test('It should return the first letter of each element of the array', (assert) 
   assert.deepEqual(firstLetters([]), []);
 });
 
-test('It should return only the strings that contain smiley faces', (assert) => {
+skip('It should return only the strings that contain smiley faces', (assert) => {
   const words = [
     'things',
     'apple (:)',
@@ -52,21 +52,21 @@ test('It should return only the strings that contain smiley faces', (assert) => 
   ]);
 });
 
-test('It should return a standardized set of phone numbers', (assert) => {
+skip('It should return a standardized set of phone numbers', (assert) => {
   const nums = ['(123) 456-7890', '(222) 222-2222'];
 
   assert.deepEqual(standardizePhoneNumbers(nums), ['1234567890', '2222222222']);
   assert.deepEqual(standardizePhoneNumbers([nums[0]]), ['1234567890']);
 });
 
-test('It should only return the odd indexed characters from the string', (assert) => {
+skip('It should only return the odd indexed characters from the string', (assert) => {
   assert.equal(onlyOddChars('0123456789'), '13579');
   assert.equal(onlyOddChars('abcd'), 'bd');
   assert.equal(onlyOddChars('a'), '');
   assert.equal(onlyOddChars(''), '');
 });
 
-test('It should correctly assess whether all the strings are happy', (assert) => {
+skip('It should correctly assess whether all the strings are happy', (assert) => {
   const words = [
     'things',
     'apple (:)',
@@ -80,7 +80,7 @@ test('It should correctly assess whether all the strings are happy', (assert) =>
   assert.equal(allHappy([]), true);
 });
 
-test('It should find all the strings that contain a given string', (assert) => {
+skip('It should find all the strings that contain a given string', (assert) => {
   const words = [
     'things',
     'apple (:)',
@@ -93,7 +93,7 @@ test('It should find all the strings that contain a given string', (assert) => {
   assert.deepEqual(findAnything(words, 'i'), ['things', 'missing that thing']);
 });
 
-test('It should determine whether all the strings contain a given string', (assert) => {
+skip('It should determine whether all the strings contain a given string', (assert) => {
   const words = [
     'things',
     'apple pie (:)',
@@ -107,7 +107,7 @@ test('It should determine whether all the strings contain a given string', (asse
   assert.equal(findEvery(words, 'i'), true);
 });
 
-test('It should remove Brook from all courses', (assert) => {
+skip('It should remove Brook from all courses', (assert) => {
   const roster = [
     ['Michelle', 'Allie', 'Brook TESTING'],
     ['Brook Riggio', "hey look it's Brook", 'Jennifer'],

@@ -17,8 +17,8 @@ QUnit.module('09 Object Iteration');
 /* ------------------------------------------------------------------------------------------------
 TESTS
 All the code below will verify that your functions are working to solve the challenges.
-DO NOT CHANGE any of the below code EXCEPT to change from "skip", to "test".
-Run your tests from the browser using live-server, or console via: npm test
+DO NOT CHANGE any of the below code EXCEPT to change from "skip", to "skip".
+Run your tests from the browser using live-server, or console via: npm skip
 ------------------------------------------------------------------------------------------------ */
 
 const courseInfo = {
@@ -28,7 +28,7 @@ const courseInfo = {
   finalExam: true,
 };
 
-test('It should return the keys from an object', (assert) => {
+skip('It should return the keys from an object', (assert) => {
   assert.deepEqual(getCourseKeys(courseInfo), [
     'name',
     'duration',
@@ -102,7 +102,7 @@ const houses = {
   },
 };
 
-test('It should return an array of the names of the houses', (assert) => {
+skip('It should return an array of the names of the houses', (assert) => {
   assert.deepEqual(getHouseNames(houses), [
     'Stark',
     'Tyrell',
@@ -114,7 +114,7 @@ test('It should return an array of the names of the houses', (assert) => {
   ]);
 });
 
-test('It should return an array of the words of all houses', (assert) => {
+skip('It should return an array of the words of all houses', (assert) => {
   assert.deepEqual(getHouseWords(houses), [
     'Winter Is Coming',
     'Growing Strong',
@@ -126,7 +126,7 @@ test('It should return an array of the words of all houses', (assert) => {
   ]);
 });
 
-test('It should return an array of the houses and number of characters', (assert) => {
+skip('It should return an array of the houses and number of characters', (assert) => {
   assert.deepEqual(getHouseSizes(houses), [
     { house: 'Stark', members: 9 },
     { house: 'Tyrell', members: 5 },
@@ -138,7 +138,7 @@ test('It should return an array of the houses and number of characters', (assert
   ]);
 });
 
-test('It should return head for a house', (assert) => {
+skip('It should return head for a house', (assert) => {
   assert.equal(getHouseHead(houses, 'Stark'), 'Sansa');
 
   assert.equal(getHouseHead(houses, 'Tyrell'), 'none');
@@ -146,11 +146,11 @@ test('It should return head for a house', (assert) => {
   assert.equal(getHouseHead(houses, 'Greyjoy'), 'Yara');
 });
 
-test('It should return the number of characters in all houses', (assert) => {
+skip('It should return the number of characters in all houses', (assert) => {
   assert.equal(totalCharacters(houses), 36);
 });
 
-test('It should return an array of the words of all houses using map', (assert) => {
+skip('It should return an array of the words of all houses using map', (assert) => {
   assert.deepEqual(getHouseWordsMapped(houses), [
     'Winter Is Coming',
     'Growing Strong',
@@ -162,6 +162,6 @@ test('It should return an array of the words of all houses using map', (assert) 
   ]);
 });
 
-test('It should return the number of characters in all houses using reduce', (assert) => {
+skip('It should return the number of characters in all houses using reduce', (assert) => {
   assert.equal(totalCharactersReduced(houses), 36);
 });
