@@ -5,9 +5,7 @@ CHALLENGE 1
 Write a function that appends ' The end.' to a string, and returns the modified string. The original source string should not be modified.
 ------------------------------------------------------------------------------------------------ */
 
-export const appendTheEnd = (str) => {
-  // Solution code here...
-};
+export const appendTheEnd = (str) => str.concat(' The end.');
 
 /* ------------------------------------------------------------------------------------------------
   CHALLENGE 2
@@ -20,7 +18,7 @@ export const appendTheEnd = (str) => {
   ------------------------------------------------------------------------------------------------ */
 
 export const appendFirstToLast = (arr) => {
-  // Solution code here...
+  arr.push(arr[0]);
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -35,7 +33,7 @@ export const appendFirstToLast = (arr) => {
   ------------------------------------------------------------------------------------------------ */
 
 export const addBirthYearProperty = (obj, year) => {
-  // Solution code here...
+  obj.yearBorn = year;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -49,7 +47,9 @@ export const addBirthYearProperty = (obj, year) => {
   ------------------------------------------------------------------------------------------------ */
 
 export const setStatusAsAuthor = (people) => {
-  // Solution code here...
+  people.forEach((e) => {
+    e.isAuthor = true;
+  });
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -65,5 +65,5 @@ export const setStatusAsAuthor = (people) => {
   ------------------------------------------------------------------------------------------------ */
 
 export const append = (arr1, arr2) => {
-  // Solution code here...
+  arr1.push(...arr2);
 };
