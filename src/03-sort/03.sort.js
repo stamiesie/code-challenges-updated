@@ -1,3 +1,4 @@
+/* eslint-disable no-plusplus */
 /* eslint-disable no-unused-vars */
 
 /* ------------------------------------------------------------------------------------------------
@@ -5,9 +6,7 @@ CHALLENGE 1
 Write a function named sortBackwards that takes in an array of numbers and returns the same array, with the numbers sorted, highest to smallest.
 ------------------------------------------------------------------------------------------------ */
 
-export const sortBackwards = (arr) => {
-  // Solution code here...
-};
+export const sortBackwards = (arr) => arr.sort((a, b) => b - a);
 
 /* ------------------------------------------------------------------------------------------------
   CHALLENGE 2
@@ -16,18 +15,14 @@ export const sortBackwards = (arr) => {
   For example, ['Alphabet', 'Zebra', 'alphabet', 'carrot'] is correctly sorted.
   ------------------------------------------------------------------------------------------------ */
 
-export const alphabetize = (arr) => {
-  // Solution code here...
-};
+export const alphabetize = (arr) => arr.sort();
 
 /* ------------------------------------------------------------------------------------------------
   CHALLENGE 3
   Write a function named sortByLength that takes in an array of strings and returns the same array, with the strings sorted by their length, lowest to highest.
   ------------------------------------------------------------------------------------------------ */
 
-export const sortByLength = (arr) => {
-  // Solution code here...
-};
+export const sortByLength = (arr) => arr.sort((a, b) => a.length - b.length);
 
 /* ------------------------------------------------------------------------------------------------
   CHALLENGE 4
@@ -36,7 +31,18 @@ export const sortByLength = (arr) => {
   ------------------------------------------------------------------------------------------------ */
 
 export const alphabetizeBetter = (arr) => {
-  // Solution code here...
+  arr.sort((a, b) => {
+    const nameA = a.toUpperCase();
+    const nameB = b.toUpperCase();
+    if (nameA < nameB) {
+      return -1;
+    }
+    if (nameA > nameB) {
+      return 1;
+    }
+    return 0;
+  });
+  return arr;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -50,9 +56,7 @@ export const alphabetizeBetter = (arr) => {
   ];
   ------------------------------------------------------------------------------------------------ */
 
-export const sortByPrice = (arr) => {
-  // Solution code here...
-};
+export const sortByPrice = (arr) => arr.sort((a, b) => a.price - b.price);
 
 /* ------------------------------------------------------------------------------------------------
   CHALLENGE 6
@@ -61,7 +65,19 @@ export const sortByPrice = (arr) => {
   ------------------------------------------------------------------------------------------------ */
 
 export const sortNumbersByLength = (arr) => {
-  // Solution code here...
+  arr.sort((a, b) => {
+    const aNum = a.toString();
+    const bNum = b.toString();
+
+    if (aNum.length < bNum.length) {
+      return -1;
+    }
+    if (aNum.length > bNum.length) {
+      return 1;
+    }
+    return 0;
+  });
+  return arr;
 };
 
 /*-----------------------------------------------------------------------------------------------
@@ -70,11 +86,24 @@ export const sortNumbersByLength = (arr) => {
   ------------------------------------------------------------------------------------------------ */
 
 export class Person {
-  // Solution code here...
+  constructor(firstName, lastName, age) {
+    this.firstName = firstName;
+    this.lastName = lastName;
+    this.age = age;
+  }
 }
 
 export const sortPeople = (arr) => {
-  // Solution code here...
+  arr.sort((a, b) => {
+    if (a.lastName < b.lastName) {
+      return -1;
+    }
+    if (a.lastName > b.lastName) {
+      return 1;
+    }
+    return 0;
+  });
+  return arr;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -85,5 +114,16 @@ export const sortPeople = (arr) => {
   ------------------------------------------------------------------------------------------------ */
 
 export const sortPeopleBetter = (arr) => {
-  // Solution code here...
+  arr.sort((a, b) => {
+    if (a.lastName < b.lastName) {
+      return -1;
+    }
+    if (a.firstName < b.firstName) {
+      return -1;
+    }
+    if (a.lastName === b.lastName && a.firstName === b.firstName) {
+      return -1;
+    }
+  });
+  return arr;
 };
