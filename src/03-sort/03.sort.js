@@ -124,6 +124,7 @@ export const sortPeopleBetter = (arr) => {
     if (a.lastName === b.lastName && a.firstName === b.firstName) {
       return -1;
     }
+    return 0;
   });
   return arr;
 };

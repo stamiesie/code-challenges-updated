@@ -1,3 +1,4 @@
+/* eslint-disable no-plusplus */
 /* eslint-disable no-unused-vars */
 
 /* ------------------------------------------------------------------------------------------------
@@ -10,7 +11,11 @@ For example, if the input is 'Welcome', the output will be:
 ------------------------------------------------------------------------------------------------ */
 
 export const howMuchPencil = (str) => {
-  // Solution code here...
+  const result = [];
+  for (let i = 0; i < str.length + 1; i++) {
+    result.push(str.slice(i));
+  }
+  return result;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -19,9 +24,7 @@ Write a function name wordsToCharList that, given a string as input, returns a n
 For example, wordsToCharList('gregor') returns ['g','r','e','g','o','r'].
 ------------------------------------------------------------------------------------------------ */
 
-export const wordsToCharList = (str) => {
-  // Solution code here...
-};
+export const wordsToCharList = (str) => str.split('');
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 3
@@ -32,7 +35,13 @@ Do not use split for this function.
 ------------------------------------------------------------------------------------------------ */
 
 export const listFoods = (recipe) => {
-  // Solution code here...
+  const singles = [];
+  for (let i = 0; i < recipe.ingredients.length; i++) {
+    const e = recipe.ingredients[i];
+    const first = e.substring(e.indexOf(' ') + 1);
+    singles.push(first.substring(first.indexOf(' ') + 1));
+  }
+  return singles;
 };
 
 /* ------------------------------------------------------------------------------------------------
