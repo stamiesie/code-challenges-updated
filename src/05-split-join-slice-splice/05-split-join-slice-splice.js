@@ -35,12 +35,18 @@ Do not use split for this function.
 ------------------------------------------------------------------------------------------------ */
 
 export const listFoods = (recipe) => {
-  const singles = [];
-  for (let i = 0; i < recipe.ingredients.length; i++) {
-    const e = recipe.ingredients[i];
+  // const singles = [];
+  // for (let i = 0; i < recipe.ingredients.length; i++) {
+  //   const e = recipe.ingredients[i];
+  //   const first = e.substring(e.indexOf(' ') + 1);
+  //   singles.push(first.substring(first.indexOf(' ') + 1));
+  // }
+  // return singles;
+
+  const singles = recipe.ingredients.map((e) => {
     const first = e.substring(e.indexOf(' ') + 1);
-    singles.push(first.substring(first.indexOf(' ') + 1));
-  }
+    return first.substring(first.indexOf(' ') + 1);
+  });
   return singles;
 };
 
@@ -51,7 +57,20 @@ You may also use other string or array methods.
 ------------------------------------------------------------------------------------------------ */
 
 export const splitFoods = (recipe) => {
-  // Solution code here...
+  // const words = [];
+  // recipe.ingredients.forEach((e) => {
+  //   words.push(e.split(' '));
+  // });
+  // const results = [];
+  // for (let i = 0; i < words.length; i++) {
+  //   results.push(words[i].slice(2).join(' '));
+  // }
+  // return results;
+
+  const results = recipe.ingredients.map((e) =>
+    e.split(' ').slice(2).join(' ')
+  );
+  return results;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -62,7 +81,14 @@ Return a new array containing just the verbs. For example, ['Mix until evenly di
 ------------------------------------------------------------------------------------------------ */
 
 export const stepActions = (recipe) => {
-  // Solution code here...
+  // const actions = [];
+  // recipe.steps.forEach((e) => {
+  //   actions.push(e.slice(0, e.indexOf(' ')));
+  // });
+  // return actions;
+
+  const verbs = recipe.steps.map((e) => e.slice(0, e.indexOf(' ')));
+  return verbs;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -76,7 +102,20 @@ For example:
 ------------------------------------------------------------------------------------------------ */
 
 export const removeEvenValues = (arr) => {
-  // Solution code here...
+  // arr.forEach((e) => {
+  //   if (e % 2 === 0) {
+  //     arr.splice(arr.indexOf(e), 1);
+  //   }
+  // });
+  // UNABLE TO USE FOR EACH BECAUSE AFTER EACH EVEN IS DELETED, A STEP BACK IS NEEDED TO CHECK NEXT ELEMENT (i--)
+
+  for (let i = 0; i < arr.length; i++) {
+    if (arr[i] % 2 === 0) {
+      arr.splice(i, 1);
+      i--;
+    }
+  }
+  return arr;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -90,9 +129,11 @@ removeLastCharacters('Gregor', -2) returns 'Gregor'
 removeLastCharacters('Gregor', 9) returns ''
 ------------------------------------------------------------------------------------------------ */
 
-export const removeLastCharacters = (str, numberOfCharacters) => {
-  // Solution code here...
-};
+export const removeLastCharacters = (str, numberOfCharacters) =>
+  str
+    .split('')
+    .splice(0, str.length - numberOfCharacters)
+    .join('');
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 8 - Stretch Goal
@@ -100,7 +141,11 @@ Write a function named totalSumCSV that, given a string of comma-separated value
 ------------------------------------------------------------------------------------------------ */
 
 export const totalSumCSV = (str) => {
-  // Solution code here...
+  let sum = 0;
+  str.split(',').forEach((e) => {
+    sum += parseInt(e);
+  });
+  return sum;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -110,7 +155,21 @@ For example, removeVowels('gregor') returns 'grgr'.
 ------------------------------------------------------------------------------------------------ */
 
 export const removeVowels = (str) => {
-  // Solution code here...
+  const arr = str.split('');
+  for (let i = 0; i < arr.length; i++) {
+    if (
+      // arr[i] === 'a' ||
+      // arr[i] === 'e' ||
+      // arr[i] === 'i' ||
+      // arr[i] === 'o' ||
+      // arr[i] === 'u'
+      arr[i].match(/[aeiou]/gi)
+    ) {
+      arr.splice(i, 1);
+      i--;
+    }
+  }
+  return arr.join('');
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -121,5 +180,13 @@ Similarly, extractVowels('The quick brown fox') returns ['Th qck brwn fx', 'eioo
 ------------------------------------------------------------------------------------------------ */
 
 export const extractVowels = (str) => {
-  // Solution code here...
+  const vowels = [];
+  const arr = str.split('');
+  for (let i = 0; i < arr.length; i++) {
+    if (arr[i].match(/[aeiou]/gi)) {
+      vowels.push(arr.splice(i, 1).join(''));
+      i--;
+    }
+  }
+  return [arr.join(''), vowels.join('')];
 };
