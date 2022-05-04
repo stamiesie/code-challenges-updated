@@ -8,7 +8,11 @@ For example, twoToThe([1,2,3]) returns [2,4,8] because 2 ^ 1 = 2, 2 ^ 2 = 4, and
 ------------------------------------------------------------------------------------------------ */
 
 export const forLoopTwoToThe = (arr) => {
-  // Solution code here...
+  const results = [];
+  for (let i = 0; i < arr.length; i++) {
+    results.push(2 ** arr[i]);
+  }
+  return results;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -17,7 +21,11 @@ export const forLoopTwoToThe = (arr) => {
   ------------------------------------------------------------------------------------------------ */
 
 export const forEachTwoToThe = (arr) => {
-  // Solution code here...
+  const results = [];
+  arr.forEach((e) => {
+    results.push(2 ** e);
+  });
+  return results;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -25,9 +33,7 @@ export const forEachTwoToThe = (arr) => {
   Write a function named mapTwoToThe that produces the same output as your forLoopTwoToThe function from challenge 1 and your forEachTwoToThe function from challenge 2, but uses map instead of a for loop or forEach.
   ------------------------------------------------------------------------------------------------ */
 
-export const mapTwoToThe = (arr) => {
-  // Solution code here...
-};
+export const mapTwoToThe = (arr) => arr.map((e) => 2 ** e);
 
 /* ------------------------------------------------------------------------------------------------
   CHALLENGE 4
@@ -36,9 +42,7 @@ export const mapTwoToThe = (arr) => {
   For example: charCode(['h','i']) returns [104, 105].
   ------------------------------------------------------------------------------------------------ */
 
-export const charCode = (arr) => {
-  // Solution code here...
-};
+export const charCode = (arr) => arr.map((e) => e.charCodeAt(e.indexOf(e)));
 
 /* ------------------------------------------------------------------------------------------------
   CHALLENGE 5
@@ -47,9 +51,16 @@ export const charCode = (arr) => {
   For example: evenOdd([1,2,3]) returns ['odd','even','odd'].
   ------------------------------------------------------------------------------------------------ */
 
-export const evenOdd = (arr) => {
-  // Solution code here...
-};
+export const evenOdd = (arr) =>
+  arr.map((e) => {
+    if (typeof e !== 'number') {
+      return 'N/A';
+    }
+    if (e % 2 === 0) {
+      return 'even';
+    }
+    return 'odd';
+  });
 
 /* ------------------------------------------------------------------------------------------------
   CHALLENGE 6
@@ -59,9 +70,7 @@ export const evenOdd = (arr) => {
   extractAbilities(snorlaxAbilities.abilities)
   ------------------------------------------------------------------------------------------------ */
 
-export const extractAbilities = (arr) => {
-  // Solution code here...
-};
+export const extractAbilities = (arr) => arr.map((e) => e.ability.name);
 
 /* ------------------------------------------------------------------------------------------------
   CHALLENGE 7
@@ -71,6 +80,5 @@ export const extractAbilities = (arr) => {
   Here is an example of a single array element: { name: 'speed', total: 35 }
   ------------------------------------------------------------------------------------------------ */
 
-export const extractStats = (arr) => {
-  // Solution code here...
-};
+export const extractStats = (arr) =>
+  arr.map((e) => ({ name: e.stat.name, total: e.baseStat + e.effort }));
