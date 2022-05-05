@@ -6,9 +6,7 @@ Write a function named oddValues that, given an array of integers as input, uses
 For example, oddValues([1,2,3]) returns [1,3].
 ------------------------------------------------------------------------------------------------ */
 
-export const oddValues = (arr) => {
-  // Solution code here...
-};
+export const oddValues = (arr) => arr.filter((e) => e % 2 !== 0);
 
 /* ------------------------------------------------------------------------------------------------
   CHALLENGE 2
@@ -18,7 +16,8 @@ export const oddValues = (arr) => {
   ------------------------------------------------------------------------------------------------ */
 
 export const filterStringsWithVowels = (arr) => {
-  // Solution code here...
+  const vowels = /[aeiou]/gi;
+  return arr.filter((e) => e.match(vowels));
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -27,9 +26,8 @@ export const filterStringsWithVowels = (arr) => {
   For example, notInFirstArray([1,2,3], [1,2,3,4]) returns [4].
   ------------------------------------------------------------------------------------------------ */
 
-export const notInFirstArray = (forbiddenValues, arr) => {
-  // Solution code here...
-};
+export const notInFirstArray = (forbiddenValues, arr) =>
+  arr.filter((e) => !forbiddenValues.includes(e));
 
 /* ------------------------------------------------------------------------------------------------
   CHALLENGE 4
@@ -37,9 +35,10 @@ export const notInFirstArray = (forbiddenValues, arr) => {
   For example, getBaseStatGreaterThan(snorlaxData.stats, 50) will return an array containing the 'special-defense' and 'special-attack' objects.
   ------------------------------------------------------------------------------------------------ */
 
-export const getBaseStatGreaterThan = (arr, minBaseStat) => {
-  // Solution code here...
-};
+export const getBaseStatGreaterThan = (arr, minBaseStat) =>
+  // if the base stat is greater than minBaseStat, return an array with the stat object
+
+  arr.filter((e) => e.baseStat > minBaseStat);
 
 /* ------------------------------------------------------------------------------------------------
   CHALLENGE 5
@@ -48,22 +47,25 @@ export const getBaseStatGreaterThan = (arr, minBaseStat) => {
   ------------------------------------------------------------------------------------------------ */
 
 export const getStatName = (arr, minBaseStat) => {
-  // Solution code here...
+  const newResults = arr.filter((e) => e.baseStat > minBaseStat);
+  return newResults.map((e) => e.stat.name);
 };
 
-/* ------------------------------------------------------------------------------------------------
-  CHALLENGE 6
-  Write a function named getCharactersWithoutChildren that, given the array of characters, below, uses filter to return an array of all characters without children.
-  ------------------------------------------------------------------------------------------------ *
-  export const getCharactersWithoutChildren = (arr) => {
-    // Solution code here...
-  };
-  /* ------------------------------------------------------------------------------------------------
-  CHALLENGE 7 - Stretch Goal
-  Write a function named evenOddNumericValues that, given an array as input, uses filter to remove any non-numeric values, then uses map to generate a new array containing the string 'even' or 'odd', depending on the original value.
-  For example: evenOddNumericValues(['Gregor', 2, 4, 1]) returns ['even', 'even', 'odd'].
-  ------------------------------------------------------------------------------------------------ */
+// ------------------------------------------------------------------------------------------------
+//   CHALLENGE 6
+//   Write a function named getCharactersWithoutChildren that, given the array of characters, below, uses filter to return an array of all characters without children.
+//   ------------------------------------------------------------------------------------------------
+
+export const getCharactersWithoutChildren = (arr) =>
+  arr.filter((e) => e.children === undefined);
+
+// ------------------------------------------------------------------------------------------------
+// CHALLENGE 7 - Stretch Goal
+// Write a function named evenOddNumericValues that, given an array as input, uses filter to remove any non-numeric values, then uses map to generate a new array containing the string 'even' or 'odd', depending on the original value.
+// For example: evenOddNumericValues(['Gregor', 2, 4, 1]) returns ['even', 'even', 'odd'].
+// ------------------------------------------------------------------------------------------------
 
 export const evenOddNumericValues = (arr) => {
-  // Solution code here...
+  const numbers = arr.filter((e) => typeof e === 'number');
+  return numbers.map((e) => (e % 2 === 0 ? 'even' : 'odd'));
 };
